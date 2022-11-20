@@ -16,7 +16,7 @@ import java.util.Optional;
 @SpringBootTest
 public class RatingTests {
 
-	@Autowired
+	/*@Autowired
 	private RatingRepository ratingRepository;
 
 	@Test
@@ -42,5 +42,5 @@ public class RatingTests {
 		ratingRepository.delete(rating);
 		Optional<Rating> ratingList = ratingRepository.findById(id);
 		Assert.assertFalse(ratingList.isPresent());
-	}
+	}*/
 }
