@@ -16,22 +16,27 @@ import java.util.Optional;
 @SpringBootTest
 public class BidTests {
 
-	/*@Autowired
+	@Autowired
 	private BidListRepository bidListRepository;
 
 	@Test
 	public void bidListTest() {
-		BidList bid = new BidList("Account Test", "Type Test", 10d);
+        /*BidList bid = new BidList("Account Test", "Type Test", 10d);*/
+        BidList bid = new BidList();
+        bid.setAccount("NASDAQ");
+        bid.setType("FORD");
+        bid.setBidQuantity(10000.00);
+        bidListRepository.save(bid);
 
 		// Save
 		bid = bidListRepository.save(bid);
 		Assert.assertNotNull(bid.getBidListId());
-		Assert.assertEquals(bid.getBidQuantity(), 10d, 10d);
+		Assert.assertEquals(bid.getBidQuantity(), 10000.00, 10000.00);
 
 		// Update
-		bid.setBidQuantity(20d);
+		bid.setBidQuantity(20000.00);
 		bid = bidListRepository.save(bid);
-		Assert.assertEquals(bid.getBidQuantity(), 20d, 20d);
+		Assert.assertEquals(bid.getBidQuantity(), 20000.00, 20000.00);
 
 		// Find
 		List<BidList> listResult = bidListRepository.findAll();
@@ -42,5 +47,5 @@ public class BidTests {
 		bidListRepository.delete(bid);
 		Optional<BidList> bidList = bidListRepository.findById(id);
 		Assert.assertFalse(bidList.isPresent());
-	}*/
+	}
 }
