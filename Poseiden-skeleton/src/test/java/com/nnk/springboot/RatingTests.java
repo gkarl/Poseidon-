@@ -16,12 +16,17 @@ import java.util.Optional;
 @SpringBootTest
 public class RatingTests {
 
-	/*@Autowired
+	@Autowired
 	private RatingRepository ratingRepository;
 
 	@Test
 	public void ratingTest() {
-		Rating rating = new Rating("Moodys Rating", "Sand PRating", "Fitch Rating", 10);
+		/*Rating rating = new Rating("Moodys Rating", "Sand PRating", "Fitch Rating", 10);*/
+        Rating rating = new Rating();
+        rating.setMoodysRating("good");
+        rating.setSandPRating("low");
+        rating.setFitchRating("best");
+        rating.setOrderNumber(10);
 
 		// Save
 		rating = ratingRepository.save(rating);
@@ -42,5 +47,5 @@ public class RatingTests {
 		ratingRepository.delete(rating);
 		Optional<Rating> ratingList = ratingRepository.findById(id);
 		Assert.assertFalse(ratingList.isPresent());
-	}*/
+	}
 }

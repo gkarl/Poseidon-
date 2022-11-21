@@ -33,13 +33,13 @@ public class CurvePointService {
         return curvePointRepository.findById(curvePointId).orElseThrow(() -> new IllegalArgumentException("Invalid ID:"+ curvePointId));
     }
 
-    public void updateBid(Integer curvePointId, CurvePoint curvePoint) {
+    public void updateCurvePoint(Integer curvePointId, CurvePoint curvePoint) {
         logger.info("Update a definited curvePoint by id");
         curvePoint.setId(curvePointId);
         curvePointRepository.save(curvePoint);
     }
 
-    public void deleteBid(Integer curvePointId) {
+    public void deleteCurvePoint(Integer curvePointId) {
         logger.info("Delete a definited curvePoint by id");
         CurvePoint curvePoint = curvePointRepository.findById(curvePointId).orElseThrow(() ->new IllegalArgumentException("Invalid ID:" + curvePointId));
         curvePointRepository.delete(curvePoint);

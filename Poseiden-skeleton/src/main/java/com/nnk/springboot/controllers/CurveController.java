@@ -77,7 +77,7 @@ public class CurveController {
             return "redirect:/curvePoint/update";
         }
         logger.info("SUCCESS update a curvePoint");
-        curvePointService.updateBid(id, curvePoint);
+        curvePointService.updateCurvePoint(id, curvePoint);
         model.addAttribute("curvePoint", curvePointService.home());
         return "redirect:/curvePoint/list";
     }
@@ -87,7 +87,7 @@ public class CurveController {
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         // TODO: Find Curve by Id and delete the Curve, return to Curve list
         logger.info("SUCCESS delete a curvePoint");
-        curvePointService.deleteBid(id);
+        curvePointService.deleteCurvePoint(id);
         model.addAttribute("curvePoint", curvePointService.home());
         return "redirect:/curvePoint/list";
     }

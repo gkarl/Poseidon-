@@ -19,6 +19,7 @@ import java.util.List;
 
 @Controller
 public class BidListController {
+
     Logger logger = LoggerFactory.getLogger(BidListController.class);
 
     // TODO: Inject Bid service

@@ -16,14 +16,17 @@ public class Rating implements Serializable {
     @Column(name = "id")
     private Integer id;
 
+    @NotBlank(message = "not be blank")
     @NotNull(message = "moodysRating not be null")
     @Column(name = "moodys_rating")
     private String moodysRating;
 
+    @NotBlank(message = "not be blank")
     @NotNull(message = "sandPrating not be null")
     @Column(name = "sand_prating")
-    private String sandPrating;
+    private String sandPRating;
 
+    @NotBlank(message = "not be blank")
     @NotNull(message = "fitchRating not be null")
     @Column(name = "fitch_rating")
     private String fitchRating;
@@ -33,9 +36,9 @@ public class Rating implements Serializable {
 
     public Rating() {}
 
-    public Rating(String moodysRating, String sandPrating, String fitchRating, Integer orderNumber) {
+    public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
         this.moodysRating = moodysRating;
-        this.sandPrating = moodysRating;
+        this.sandPRating = sandPRating;
         this.fitchRating = fitchRating;
         this.orderNumber = orderNumber;
     }
@@ -56,12 +59,12 @@ public class Rating implements Serializable {
         this.moodysRating = moodysRating;
     }
 
-    public String getSandPrating() {
-        return sandPrating;
+    public String getSandPRating() {
+        return sandPRating;
     }
 
-    public void setSandPrating(String sandPrating) {
-        this.sandPrating = sandPrating;
+    public void setSandPRating(String sandPRating) {
+        this.sandPRating = sandPRating;
     }
 
     public String getFitchRating() {
