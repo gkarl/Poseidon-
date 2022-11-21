@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90831d6d-c515-40a9-9616-f659f8f0d8cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/service/RatingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/service/RuleNameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/BidListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/BidListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/CurveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/CurveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/RatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/RatingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/domain/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/domain/Rating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/service/CurvePointService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/service/CurvePointService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rating/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/rating/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rating/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/rating/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RatingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RatingTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/BidListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/BidListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/CurveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/CurveController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/RatingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/RatingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/domain/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/domain/Rating.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/service/CurvePointService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/service/CurvePointService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rating/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/rating/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rating/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/rating/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rating/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/rating/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/RuleNameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ruleName/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ruleName/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ruleName/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ruleName/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ruleName/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ruleName/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/RuleNameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nnk/springboot/controllers/RuleNameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ruleName/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ruleName/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ruleName/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ruleName/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ruleName/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ruleName/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nnk/springboot/RuleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nnk/springboot/RuleTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +96,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="JUnit.RuleTests">
     <configuration name="BidTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-skeleton" />
       <extension name="coverage">
@@ -149,6 +142,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RuleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nnk.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nnk.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.nnk.springboot.RuleTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-skeleton" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nnk.springboot.Application" />
@@ -158,6 +166,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RuleTests" />
         <item itemvalue="JUnit.RatingTests" />
         <item itemvalue="JUnit.CurvePointTests" />
         <item itemvalue="JUnit.BidTests" />
@@ -206,7 +215,7 @@
       <workItem from="1668684897605" duration="15413000" />
       <workItem from="1668783680370" duration="8319000" />
       <workItem from="1668974503533" duration="2437000" />
-      <workItem from="1669024948739" duration="14884000" />
+      <workItem from="1669024948739" duration="17890000" />
     </task>
     <servers />
   </component>
@@ -234,46 +243,46 @@
     </state>
     <state x="-1059" y="315" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1668686838416" />
     <state x="861" y="315" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1668769178660" />
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1669042224794">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1669049208228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042224794" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1669042224794">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208228" />
+    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1669049208227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783251" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042224794" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1669042224794">
+    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208227" />
+    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1669049208227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783251" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042224794" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1669042224794">
+    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208227" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1669049208227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042224794" />
-    <state width="1877" height="168" key="GridCell.Tab.1.bottom" timestamp="1669042199897">
+    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208227" />
+    <state width="1877" height="254" key="GridCell.Tab.1.bottom" timestamp="1669049208228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="168" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042199897" />
-    <state width="1877" height="168" key="GridCell.Tab.1.center" timestamp="1669042199896">
+    <state width="1877" height="254" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208228" />
+    <state width="1877" height="254" key="GridCell.Tab.1.center" timestamp="1669049208228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="168" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042199896" />
-    <state width="1877" height="168" key="GridCell.Tab.1.left" timestamp="1669042199896">
+    <state width="1877" height="254" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208228" />
+    <state width="1877" height="254" key="GridCell.Tab.1.left" timestamp="1669049208228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="168" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042199896" />
-    <state width="1877" height="168" key="GridCell.Tab.1.right" timestamp="1669042199896">
+    <state width="1877" height="254" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208228" />
+    <state width="1877" height="254" key="GridCell.Tab.1.right" timestamp="1669049208228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="158" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1669040783252" />
-    <state width="1877" height="168" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669042199896" />
+    <state width="1877" height="254" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1669049208228" />
     <state width="1614" height="190" key="GridCell.Tab.2.bottom" timestamp="1669039732758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

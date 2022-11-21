@@ -16,17 +16,25 @@ import java.util.Optional;
 @SpringBootTest
 public class RuleTests {
 
-	/*@Autowired
+	@Autowired
 	private RuleNameRepository ruleNameRepository;
 
 	@Test
 	public void ruleTest() {
-		RuleName rule = new RuleName("Rule Name", "Description", "Json", "Template", "SQL", "SQL Part");
+		/*RuleName rule = new RuleName("Rule Name", "Description", "Json", "Template", "SQL", "SQL Part");*/
+        RuleName rule = new RuleName();
+        rule.setName("Rule");
+        rule.setDescription("Description");
+        rule.setJson("Json");
+        rule.setTemplate("Template");
+        rule.setSqlStr("SQL");
+        rule.setSqlPart("Part");
+
 
 		// Save
 		rule = ruleNameRepository.save(rule);
 		Assert.assertNotNull(rule.getId());
-		Assert.assertTrue(rule.getName().equals("Rule Name"));
+		Assert.assertTrue(rule.getName().equals("Rule"));
 
 		// Update
 		rule.setName("Rule Name Update");
@@ -42,5 +50,5 @@ public class RuleTests {
 		ruleNameRepository.delete(rule);
 		Optional<RuleName> ruleList = ruleNameRepository.findById(id);
 		Assert.assertFalse(ruleList.isPresent());
-	}*/
+	}
 }
