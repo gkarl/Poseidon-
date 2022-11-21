@@ -16,17 +16,21 @@ import java.util.Optional;
 @SpringBootTest
 public class CurvePointTests {
 
-	/*@Autowired
+	@Autowired
 	private CurvePointRepository curvePointRepository;
 
 	@Test
 	public void curvePointTest() {
-		CurvePoint curvePoint = new CurvePoint(10, 10d, 30d);
+		/*CurvePoint curvePoint = new CurvePoint(10, 10d, 30d);*/
+        CurvePoint curvePoint = new CurvePoint();
+        curvePoint.setCurveId(15);
+        curvePoint.setTerm(1.10);
+        curvePoint.setValue(3.30);
 
 		// Save
 		curvePoint = curvePointRepository.save(curvePoint);
 		Assert.assertNotNull(curvePoint.getId());
-		Assert.assertTrue(curvePoint.getCurveId() == 10);
+		Assert.assertTrue(curvePoint.getCurveId() == 15);
 
 		// Update
 		curvePoint.setCurveId(20);
@@ -42,6 +46,6 @@ public class CurvePointTests {
 		curvePointRepository.delete(curvePoint);
 		Optional<CurvePoint> curvePointList = curvePointRepository.findById(id);
 		Assert.assertFalse(curvePointList.isPresent());
-	}*/
+	}
 
 }
