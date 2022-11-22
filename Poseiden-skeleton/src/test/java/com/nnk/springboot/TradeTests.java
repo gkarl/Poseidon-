@@ -16,17 +16,23 @@ import java.util.Optional;
 @SpringBootTest
 public class TradeTests {
 
-	/*@Autowired
+	@Autowired
 	private TradeRepository tradeRepository;
 
 	@Test
 	public void tradeTest() {
-		Trade trade = new Trade("Trade Account", "Type");
+		/*Trade trade = new Trade("Trade Account", "Type");*/
+        Trade trade = new Trade();
+        trade.setAccount("Account");
+        trade.setType("Type");
+        trade.setBuyQuantity(20.0);
+
+
 
 		// Save
 		trade = tradeRepository.save(trade);
 		Assert.assertNotNull(trade.getTradeId());
-		Assert.assertTrue(trade.getAccount().equals("Trade Account"));
+		Assert.assertTrue(trade.getAccount().equals("Account"));
 
 		// Update
 		trade.setAccount("Trade Account Update");
@@ -42,5 +48,5 @@ public class TradeTests {
 		tradeRepository.delete(trade);
 		Optional<Trade> tradeList = tradeRepository.findById(id);
 		Assert.assertFalse(tradeList.isPresent());
-	}*/
+	}
 }
