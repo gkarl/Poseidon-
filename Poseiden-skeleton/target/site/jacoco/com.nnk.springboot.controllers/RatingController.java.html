@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RatingController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">RatingController.java</span></div><h1>RatingController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+
+
+import com.nnk.springboot.domain.Rating;
+import com.nnk.springboot.service.RatingService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+import java.util.List;
+
+/**
+ * Controller use CRUD RatingService methods to generate enpoints for Rating entity
+ * @see RatingService
+ * @author gavillot
+ * @version 2.0
+ */
+@Controller
+<span class="fc" id="L27">public class RatingController {</span>
+
+<span class="fc" id="L29">    Logger logger = LoggerFactory.getLogger(RatingController.class);</span>
+
+
+    @Autowired
+    RatingService ratingService;
+
+    /**
+     * Display rating in a table
+     * @see RatingService#home() 
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
+    @RequestMapping(&quot;/rating/list&quot;)
+    public String home(Model model) {
+
+<span class="nc" id="L44">        logger.info(&quot;displays the rating liste page&quot;);</span>
+<span class="nc" id="L45">        List&lt;Rating&gt; ratingList = ratingService.home();</span>
+<span class="nc" id="L46">        model.addAttribute(&quot;rating&quot;, ratingList);</span>
+<span class="nc" id="L47">        return &quot;rating/list&quot;;</span>
+    }
+    
+    /**
+     * Display add new rating form
+     * @param rating item to save from form
+     * @return frontend
+     */
+    @GetMapping(&quot;/rating/add&quot;)
+    public String addRatingForm(Rating rating) {
+<span class="nc" id="L57">        logger.info(&quot;displays the form page to create a rating&quot;);</span>
+<span class="nc" id="L58">        return &quot;rating/add&quot;;</span>
+    }
+
+    /**
+     * Save new rating on form then return to the rating list table
+     * @see RatingService#validate(Rating) 
+     * @param rating item to save from form
+     * @param result Handled errors
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
+    @PostMapping(&quot;/rating/validate&quot;)
+    public String validate(@Valid Rating rating, BindingResult result, Model model) {
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
+<span class="nc" id="L73">            logger.error(&quot;ERROR for create a rating&quot;);</span>
+<span class="nc" id="L74">            return &quot;rating/add&quot;;</span>
+        }
+<span class="nc" id="L76">        logger.info(&quot;SUCCESS create new rating&quot;);</span>
+<span class="nc" id="L77">        ratingService.validate(rating);</span>
+<span class="nc" id="L78">        model.addAttribute(&quot;rating&quot;, ratingService.home());</span>
+<span class="nc" id="L79">        return &quot;redirect:/rating/list&quot;;</span>
+    }
+
+    /**
+     * Display edit rating form
+     * @see RatingService#showUpdateForm(Integer) 
+     * @param id Item id
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
+    @GetMapping(&quot;/rating/update/{id}&quot;)
+    public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+
+<span class="nc" id="L92">        logger.info(&quot;displays the form page to update a rating&quot;);</span>
+<span class="nc" id="L93">        Rating rating = ratingService.showUpdateForm(id);</span>
+<span class="nc" id="L94">        model.addAttribute(&quot;rating&quot;, rating);</span>
+<span class="nc" id="L95">        return &quot;rating/update&quot;;</span>
+    }
+
+    /**
+     * Update rating by id then return to the rating list table
+     * @see RatingService#updateRating(Integer, Rating) 
+     * @param id Item id
+     * @param rating item to save from form
+     * @param result Handled errors
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
+    @PostMapping(&quot;/rating/update/{id}&quot;)
+    public String updateRating(@PathVariable(&quot;id&quot;) Integer id, @Valid Rating rating, BindingResult result, Model model) {
+
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
+<span class="nc" id="L111">            logger.error(&quot;ERROR for update a rating&quot;);</span>
+<span class="nc" id="L112">            return &quot;redirect:/rating/update&quot;;</span>
+        }
+<span class="nc" id="L114">        logger.info(&quot;SUCCESS update a rating&quot;);</span>
+<span class="nc" id="L115">        ratingService.updateRating(id, rating);</span>
+<span class="nc" id="L116">        model.addAttribute(&quot;rating&quot;, ratingService.home());</span>
+<span class="nc" id="L117">        return &quot;redirect:/rating/list&quot;;</span>
+    }
+
+    /**
+     * Delete rating by id
+     * @see RatingService#deleteRating(Integer) 
+     * @param id Item id
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
+    @GetMapping(&quot;/rating/delete/{id}&quot;)
+    public String deleteRating(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+
+<span class="nc" id="L130">        logger.info(&quot;SUCCESS delete a rating&quot;);</span>
+<span class="nc" id="L131">        ratingService.deleteRating(id);</span>
+<span class="nc" id="L132">        model.addAttribute(&quot;rating&quot;, ratingService.home());</span>
+<span class="nc" id="L133">        return &quot;redirect:/rating/list&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

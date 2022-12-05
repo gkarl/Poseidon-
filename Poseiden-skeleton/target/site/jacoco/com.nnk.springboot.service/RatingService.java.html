@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RatingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">RatingService.java</span></div><h1>RatingService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+
+import com.nnk.springboot.domain.Rating;
+import com.nnk.springboot.repositories.RatingRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Rating Service use CRUD RatingRepository methods to communicate whith rating table
+ * @see RatingRepository
+ */
+@Service
+<span class="fc" id="L18">public class RatingService {</span>
+
+<span class="fc" id="L20">    Logger logger = LoggerFactory.getLogger(RatingService.class);</span>
+
+    @Autowired
+    RatingRepository ratingRepository;
+
+    /**
+     * Query all the rows of the table rating table
+     * @return all Rating items
+     */
+    public List&lt;Rating&gt; home(){
+<span class="nc" id="L30">        logger.info(&quot;displays the rating&quot;);</span>
+<span class="nc" id="L31">        return ratingRepository.findAll();</span>
+    }
+
+    /**
+     * Create new rating
+     * @param rating item to save
+     */
+    public void validate(Rating rating) {
+<span class="nc" id="L39">        logger.info(&quot;Save a rating&quot;);</span>
+<span class="nc" id="L40">        ratingRepository.save(rating);</span>
+<span class="nc" id="L41">    }</span>
+
+    /**
+     * Show edit form for one rating using it's id
+     * @param id Item id
+     * @return Item whith this id
+     */
+    public Rating showUpdateForm(Integer id) {
+<span class="nc" id="L49">        logger.info(&quot;Find by id from rating&quot;);</span>
+<span class="nc" id="L50">        return ratingRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid ID:&quot;+ id));</span>
+    }
+
+    /**
+     * Update rating by id
+     * @param id Item id
+     * @param rating item to save
+     */
+    public void updateRating(Integer id, Rating rating) {
+<span class="nc" id="L59">        logger.info(&quot;Update a definited rating by id&quot;);</span>
+<span class="nc" id="L60">        rating.setId(id);</span>
+<span class="nc" id="L61">        ratingRepository.save(rating);</span>
+<span class="nc" id="L62">    }</span>
+
+    /**
+     * Delete rating by id
+     * @param id Item id
+     */
+    public void deleteRating(Integer id) {
+<span class="nc" id="L69">        logger.info(&quot;Delete a definited rating by id&quot;);</span>
+<span class="nc" id="L70">        Rating rating = ratingRepository.findById(id).orElseThrow(() -&gt;new IllegalArgumentException(&quot;Invalid ID:&quot; + id));</span>
+<span class="nc" id="L71">        ratingRepository.delete(rating);</span>
+<span class="nc" id="L72">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
