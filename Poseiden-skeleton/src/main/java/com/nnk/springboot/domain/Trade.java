@@ -1,7 +1,7 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "trade")
 public class Trade implements Serializable {
-    // TODO: Map columns in data table TRADE with corresponding java fields
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

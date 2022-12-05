@@ -16,37 +16,59 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 import java.util.List;
 
-
+/**
+ * Controller use CRUD BidListService methods to generate enpoints for BidList entity
+ * @see BidListService
+ * @author gavillot
+ * @version 2.0
+ */
 @Controller
 public class BidListController {
 
     Logger logger = LoggerFactory.getLogger(BidListController.class);
 
-    // TODO: Inject Bid service
+
     @Autowired
     private BidListService bidListService;
 
-    // Va sur la page bidList/list.html => affiche la liste des bid dans un tableau
+
+    /**
+     * Display bidlist in a table
+     * @see BidListService#home() 
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
     @RequestMapping("/bidList/list")
     public String home(Model model) {
-        // TODO: call service find all bids to show to the view
+
         logger.info("displays the bid liste page");
         List<BidList> bidList = bidListService.home();
         model.addAttribute("bidList", bidList);
         return "bidList/list";
     }
 
-    // Va sur la page bidList/add.html => affiche un formulaire pour ajouter un bid
+    /**
+     * Display add new bid form
+     * @param bid item to save from form
+     * @return frontend
+     */
     @GetMapping("/bidList/add")
     public String addBidForm(BidList bid) {
         logger.info("displays the form page to create a bid");
         return "bidList/add";
     }
 
-    // Sauve le bid entrer dans le formulaire et retourne sur la page bidList/list.html
+    /**
+     * Save new bid on form then return to the bid list table
+     * @see BidListService#validate(BidList) 
+     * @param bid item to save from form
+     * @param result Handled errors
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
     @PostMapping("/bidList/validate")
     public String validate(@Valid BidList bid, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return bid list
+
         if (result.hasErrors()) {
             logger.error("ERROR for create a bid");
             return "bidList/add";
@@ -57,20 +79,34 @@ public class BidListController {
         return "redirect:/bidList/list";
     }
 
-    // Va sur la page bidList/update.html => formulaire pour editer un bid
+    /**
+     * Display edit bid form
+     * @see BidListService#showUpdateForm(Integer) 
+     * @param bidListId Item id
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
     @GetMapping("/bidList/update/{bidListId}")
     public String showUpdateForm(@PathVariable("bidListId") Integer bidListId, Model model) {
-        // TODO: get Bid by Id and to model then show to the form
+
         logger.info("displays the form page to update a bid");
         BidList bidList = bidListService.showUpdateForm(bidListId);
         model.addAttribute("bidList", bidList);
         return "bidList/update";
     }
 
-    // Sauve l'update du bid choisi et retourne sur la page bidList/list.html
+    /**
+     * Update bid by id then return to the bid list table
+     * @see BidListService#updateBid(Integer, BidList) 
+     * @param id Item id
+     * @param bidList item to save from form
+     * @param result Handled errors
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
     @PostMapping("/bidList/update/{id}")
     public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList, BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Bid and return list Bid
+
         if (result.hasErrors()) {
             logger.error("ERROR for update a bid");
             return "redirect:/bidList/update";
@@ -81,10 +117,16 @@ public class BidListController {
         return "redirect:/bidList/list";
     }
 
-    // Supprimer un bid depuis le tableau des bids
+    /**
+     * Delete bid by id
+     * @see BidListService#deleteBid(Integer) 
+     * @param id Item id
+     * @param model Displaying Model Attributes
+     * @return frontend
+     */
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Bid by Id and delete the bid, return to Bid list
+
         logger.info("SUCCESS delete a bid");
         bidListService.deleteBid(id);
         model.addAttribute("bidList", bidListService.home());

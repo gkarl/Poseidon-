@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable{
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
@@ -30,9 +30,8 @@ public class User implements Serializable{
 
     public User() { }
 
-    public User(String username, String password, String fullname, String role) {
+    public User(String username, String fullname, String role) {
         this.username = username;
-        this.password = password;
         this.fullname = fullname;
         this.role = role;
 
