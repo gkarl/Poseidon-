@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.endpoint.OAuth2AccessTokenResponseClient;
+import org.springframework.security.oauth2.client.endpoint.OAuth2AuthorizationCodeGrantRequest;
 
 /**
  * Filters Spring Security
@@ -42,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+
         http.csrf().disable()
                 /*
                  * Access setup
@@ -64,6 +67,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/app/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
+                .defaultSuccessUrl("/bidList/list")
+                .and()
+                .oauth2Login()
                 .defaultSuccessUrl("/bidList/list")
                 /*
                  * Logout
